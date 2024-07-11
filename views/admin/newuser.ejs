@@ -1,0 +1,68 @@
+<%- include('../layouts/header.ejs') %>
+
+<body class="bg-dark">
+  
+
+  <div class="container">
+    <div class="row">
+        <div class="col-12 col md-12 col-lg-12 mt-5 text-light">
+
+            <h1>Add New User</h1>
+            <form method="post" action="" enctype="multipart/form-data">
+
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Enter username</label>
+                    <input type="text" class="form-control" name="name">
+                    
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Enter the email address</label>
+                  <input type="email" class="form-control" name="email">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Enter the Password</label>
+                  <input type="password" class="form-control" name="password">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Enter mobile number</label>
+                    <input type="number" class="form-control" name="mobile">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">insert image</label>
+                    <input class="form-control" type="file" id="formFile" name="image">
+                  </div>
+                
+              
+                <button type="submit" class="btn btn-primary">Create New User</button>
+              </form>
+
+              <a href="/admin/home">Go Home</a>
+
+              <%
+              
+              if(typeof message!=='undefined'){
+                %>
+
+                <p style="color: green;"><%=message %></p>
+
+                <%
+              }
+              %>
+            
+            
+            
+        </div>
+    </div>
+</div>
+
+   
+</body>
+
+
+
+
+ 
+<%- include('../layouts/footer.ejs') %>

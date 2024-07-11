@@ -1,0 +1,183 @@
+<!-- <%- include('../layouts/header.ejs') %>
+
+<body class="bg-dark">
+    <div class="container ">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12 mt-4 p-3">
+                <div class="registerBox text-center text-light border border-primary-subtle p-3">
+                    
+                <h1>Create a new account</h1>
+                <% 
+                if(typeof message !== 'undefined'){
+    
+                    %>
+                    <p style="color: green;"><%= message %></p>
+                    <%
+    
+                } 
+                
+                
+                %>
+                <form action="/register" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+
+                    
+                    <label for="">Enter Your Name</label><br><br>
+                    <input type="text" name="name" required><br><br>
+    
+                    <label for="">Enter Your email</label><br><br>
+                    <input type="email" name="email" required><br><br>
+    
+                    <label for="">Enter Your password</label><br><br>
+                    <input type="password" name="password" required><br><br>
+    
+                    <label for="">Enter Your mobile</label><br><br>
+                    <input type="number" name="mobile" required><br><br>
+    
+                    <label for="">Enter Your Image</label><br><br>
+                    <input type="file" name="image" required><br><br>
+    
+                    <button type="submit" value="register"  class="d-grid gap-2 mx-auto btn btn-success">Submit</button>
+
+                    <button type="button" class="btn btn-light mt-1 "><a href="/" style="text-decoration: none;">Back to Welcome page</a></button>
+                  
+    
+                </form>
+                </div>
+                
+                
+    
+      
+    
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function validateForm() {
+            var nameInput = document.getElementById('name').value.trim();
+            var email = document.getElementById('email').value;
+            var emailRegex = /^[^\s@]+@gmail\.com$/i;
+    
+            var mobile = document.getElementById('mobile').value;
+            var mobileRegex = /^\d{10}$/;
+    
+            var password = document.getElementById('password').value;
+            var passwordRegex = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/;
+    
+    
+            if (nameInput === "") {
+                alert("Please enter a valid name");
+                return false;
+            }
+            if (!emailRegex.test(email)) {
+                alert('Invalid email. Please enter a valid Gmail address.');
+                return false;
+            }
+    
+            if (!mobileRegex.test(mobile)) {
+                alert('Invalid mobile number. Please enter a 10-digit number.');
+                return false;
+            }
+    
+            if (!passwordRegex.test(password)) {
+                alert('Invalid password. It should be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.');
+                return false;
+            }
+    
+            return true;
+        }
+    </script>
+    
+
+    
+</body>
+
+
+
+
+
+<%- include('../layouts/footer.ejs') %> -->
+
+<%- include('../layouts/header.ejs') %>
+
+<body class="bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12 mt-4 p-3">
+                <div class="registerBox text-center text-light border border-primary-subtle p-3">
+
+                    <h1>Create a new account</h1>
+                    <% 
+                    if (typeof message !== 'undefined') {
+                        %>
+                        <p style="color: green;"><%= message %></p>
+                        <%
+                    }
+                    %>
+                    <form action="/register" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+
+                        <label for="name">Enter Your Name</label><br><br>
+                        <input type="text" name="name" id="name" required><br><br>
+
+                        <label for="email">Enter Your email</label><br><br>
+                        <input type="email" name="email" id="email" required><br><br>
+
+                        <label for="password">Enter Your password</label><br><br>
+                        <input type="password" name="password" id="password" required><br><br>
+
+                        <label for="mobile">Enter Your mobile</label><br><br>
+                        <input type="number" name="mobile" id="mobile" required><br><br>
+
+                        <label for="image">Enter Your Image</label><br><br>
+                        <input type="file" name="image" id="image" required><br><br>
+
+                        <button type="submit" value="register" class="d-grid gap-2 mx-auto btn btn-success">Submit</button>
+
+                        <button type="button" class="btn btn-light mt-1 "><a href="/" style="text-decoration: none;">Back to Welcome page</a></button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var nameInput = document.getElementById('name').value.trim();
+            var email = document.getElementById('email').value;
+            var emailRegex = /^[^\s@]+@gmail\.com$/i;
+
+            var mobile = document.getElementById('mobile').value;
+            var mobileRegex = /^\d{10}$/;
+
+            var password = document.getElementById('password').value;
+            var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/;
+
+            if (nameInput === "") {
+                alert("Please enter a valid name");
+                return false;
+            }
+
+            if (!emailRegex.test(email)) {
+                alert('Invalid email. Please enter a valid Gmail address.');
+                return false;
+            }
+
+            if (!mobileRegex.test(mobile)) {
+                alert('Invalid mobile number. Please enter a 10-digit number.');
+                return false;
+            }
+
+            if (!passwordRegex.test(password)) {
+                alert('Invalid password. It should be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+</body>
+
+<%- include('../layouts/footer.ejs') %>

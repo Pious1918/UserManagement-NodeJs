@@ -1,0 +1,49 @@
+<%- include('../layouts/header.ejs') %>
+
+
+<body class="bg-dark">
+    
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12 col-md-12 col-lg-12 text-light">
+
+            <h1 class="text-primary">Admin Login</h1>
+
+            <%
+                if(typeof message!== 'undefined'){
+            
+                    %>
+                    <h3><%= message %></h3>
+                    <%
+                }
+            
+            %>
+            
+            <form action="/admin" method="post" >
+            
+                <label for="">Enter your email</label><br><br>
+                <input type="email" name="email" required><br><br>
+            
+                <label for="">Enter your password</label><br><br>
+                <input type="password" name="password" required><br><br>
+            
+                <button type="submit" value="" class="btn btn-success">Login</button>
+                
+                <button type="button" class="btn btn-light mt-1 "><a href="/" style="text-decoration: none;">Back to Welcome page</a></button>
+            
+            
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+
+
+
+
+
+<%- include('../layouts/footer.ejs') %>

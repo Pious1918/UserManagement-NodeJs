@@ -1,0 +1,44 @@
+<%- include('../layouts/header.ejs') %>
+
+
+<body class="bg-dark">
+    
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12 col-md-12 col-lg-12 text-light">
+                
+                
+                <form action="" method="post" enctype="multipart/form-data">
+                    <img src="userImages/<%= user.image %>" alt="<%= user.image %>" width="100px"><br>
+                    <input type="file" name="image" class="mt-2"><br>
+                    <input type="hidden" name="user_id" value="<%= user._id %>"> <br><br>
+                    
+                    <label for="">Enter your name</label><br><br>
+                    <input type="text" name="name" required value="<%= user.name %>"><br><br>
+                
+                
+                    <label for="">Enter your email</label><br><br>
+                    <input type="email" name="email" required value="<%= user.email %>"><br><br>
+                
+                
+                    <label for="">Enter Your mobile</label><br><br>
+                    <input type="number" name="mobile" value="<%= user.mobile %>" pattern="[0-9]{10}"><br><br>
+                
+                
+                    <button type="submit" class="btn btn-success">update profile</button>
+                    
+                
+                
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+<%- include('../layouts/footer.ejs') %>

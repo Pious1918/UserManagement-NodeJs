@@ -1,0 +1,57 @@
+<%- include('../layouts/header.ejs') %>
+
+
+<body class="bg-dark">
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-12 col-md-12 col-lg-12 text-light">
+  
+        <h1>Welcome, <%= admin.name %> to the admin page</h1>
+  
+  <a href="/admin/dashboard">Edit/Dashboard</a><br><br>
+  <button type="button" class="btn btn-primary"><a href="/admin/newuser" style="text-decoration: none; color: black;">Add a new user</a></button>
+
+  
+  
+  <table class="table mt-4">
+      <thead >
+        <tr class="table-danger" >
+          
+          <th scope="col" style="width: 100px;">Name</th>
+          <th scope="col" style="width: 100px;">email</th>
+          <th scope="col" style="width: 100px;">mobile</th>
+          <th scope="col" style="width: 100px;">Profile Photo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-success">
+          
+          <td><%= admin.name %></td>
+          <td><%= admin.email %></td>
+          <td><%= admin.mobile %></td>
+          <td><img src=" /userImages/<%= admin.image %> " alt="<%= admin.image %> " style="width: 100px;"></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  
+  
+    <button type="button"  class="btn btn-danger"><a href="/admin/logout" style="text-decoration: none ; color: black;">Logout</a></button>
+  
+  
+  
+      </div>
+    </div>
+  </div>
+  
+   
+
+
+
+
+</body>
+
+
+
+
+<%- include('../layouts/footer.ejs') %>

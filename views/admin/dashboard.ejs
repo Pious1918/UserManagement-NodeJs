@@ -1,0 +1,112 @@
+<%- include('../layouts/header.ejs') %>
+
+<body class="bg-dark">
+    
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12 col-md-12 col-lg-12 text-light">
+    
+                <h1 class="text-warning">Dashboard</h1>
+    
+                <button type="button" class="btn btn-primary"><a href="/admin/newuser" style="text-decoration: none; color: black;">Add a new user</a></button>
+
+    
+
+    <button type="button" class="btn btn-light"><a href="/admin/home" style="text-decoration: none; color: black;">Go Home</a></button>
+    
+    <form class="d-flex">
+        <input class="form-control me-2 py-1" type="text" id="search" name="search" placeholder="Search customer name" aria-label="Search"/>
+        <button class="btn btn-sm btn-secondary" type="submit">Search</button>
+   </form>
+
+    <h1>List of registered users</h1>
+    
+    
+    <!-- <p><%= data %></p> -->
+    <table class="table">
+        <thead >
+          <tr class="table-warning">
+            
+            <th scope="col" style="width: 100px;">Name</th>
+            <th scope="col" style="width: 100px;">email</th>
+            <th scope="col" style="width: 100px;">mobile</th>
+            <th scope="col" style="width: 100px;">Profile Photo</th>
+            <th scope="col" style="width: 100px;">Edit the user</th>
+            <th scope="col" style="width: 100px;">Delete the user</th>
+          </tr>
+        </thead>
+        <tbody>
+    
+            <%
+            if(data.length>0){
+    
+                for(let i=0 ; i<data.length ; i++){
+                    %>
+                    <tr class="table-primary">
+                        <td><%= data[i].name %></td>
+                        <td><%= data[i].email %></td>
+                        <td><%= data[i].mobile %></td>
+                        
+                        <td><img src=" /userImages/<%= data[i].image %> " alt="<%= data[i].image %> " style="width: 100px;"></td>
+                        <td class="">
+                            
+                            <button type="button" class="btn btn-warning text-center">
+                            <a href="/admin/editUser?id=<%= data[i]._id %>" style="text-decoration: none; color: black;">Edit</a>
+                            </button>
+                        
+                        </td>
+                        <td>
+                            
+                            <button type="button" class="btn btn-danger">
+                            <a href="/admin/deleteUser?id=<%= data[i]._id %>"  style="text-decoration: none; color: black;">Delete User</a>
+                            </button>    
+                        
+                        </td>
+                    </tr>
+                    <%
+                }
+    
+    
+            }else{
+    
+                %>
+                <tr>
+                    <td>user Not Found</td>
+                </tr>
+    
+                <%
+            }
+            %>
+    
+    
+          
+        </tbody>
+      </table>
+    
+    
+    
+    
+            </div>
+        </div>
+    </div>
+
+
+
+ 
+
+
+  
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+<%- include('../layouts/footer.ejs') %>

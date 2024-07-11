@@ -1,0 +1,51 @@
+<%- include('../layouts/header.ejs') %>
+
+<body class="bg-dark"> 
+  
+ 
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-12 mt-5  bg-dark bg-gradient">
+        <h1 class="text-light">Welcome, <%= user.name %> </h1>
+
+
+        <table class="table bg-light bg-gradient">
+            <thead >
+              <tr class="table-warning">
+                
+                <th scope="col" style="width: 100px;">Name</th>
+                <th scope="col" style="width: 100px;">email</th>
+                <th scope="col" style="width: 100px;">mobile</th>
+                <th scope="col" style="width: 100px;">Profile Photo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-primary">
+                
+                <td><%= user.name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.mobile %></td>
+                <td><img src=" userImages/<%= user.image %> " alt="<%= user.image %> " style="width: 100px;"></td>
+              </tr>
+              
+            </tbody>
+          </table>
+        
+        <a href="/edit?id=<%= user._id %>">Edit</a><br><br>
+        
+        <button type="button" class="btn btn-danger"><a href="/logout" style="text-decoration: none; color: black;">Logout</a></button>
+        
+        
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+
+
+ 
+<%- include('../layouts/footer.ejs') %>
